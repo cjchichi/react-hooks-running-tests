@@ -5,7 +5,10 @@ import React from "react";
 import Article from "../components/Article";
 
 test("displays the text 'please pass this test'", () => {
-  render(<Article />);
+  render(<Article/> );
+
+  const element = screen.queryByText("please pass this test");
+  screen.debug();
 
   expect(screen.queryByText("please pass this test")).toBeInTheDocument();
 });
